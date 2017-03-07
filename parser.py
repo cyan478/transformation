@@ -1,6 +1,7 @@
 from display import *
 from matrix import *
 from draw import *
+#import time
 
 def parse_file( fname, points, transform, screen, color ):
     with open(fname, "r") as file:
@@ -13,12 +14,12 @@ def parse_file( fname, points, transform, screen, color ):
     			if len(args) != 6:
     				print "Wrong number of arguments for line"
     			else:
-    				add_edge(points, int(args[0]), int(args[1]), int(args[2]), int(args[3]), int(args[4]), int(args[5])
+    				add_edge(points, int(args[0]), int(args[1]), int(args[2]), int(args[3]), int(args[4]), int(args[5]))
 
-            if l == "ident":
+            elif l == "ident":
     			ident(transform)
 
-            if l == "scale":
+            elif l == "scale":
     			l = file.readline().strip()
     			args = l.split(" ")
     			if len(args) != 3:
@@ -27,7 +28,7 @@ def parse_file( fname, points, transform, screen, color ):
 					smatrix = make_scale(int(args[0]),int(args[1]),int(args[2]))
 					matrix_mult(smatrix, transform)
 
-            if l == "move":
+            elif l == "move":
     			l = file.readline().strip()
     			args = l.split(" ")
     			if len(args) != 3:
@@ -36,7 +37,7 @@ def parse_file( fname, points, transform, screen, color ):
 					tmatrix = make_translate(int(args[0]),int(args[1]),int(args[2]))
 					matrix_mult(tmatrix, transform)
 
-            if l == "rotate":
+            elif l == "rotate":
     			l = file.readline().strip()
     			args = l.split(" ")
     			if len(args) != 2:
@@ -54,26 +55,28 @@ def parse_file( fname, points, transform, screen, color ):
 					else:
 						print "Wrong Axis input, not x/y/z"
 
-            if l == "apply":
+            elif l == "apply":
                 matrix_mult(transform, points)
 
-            if l == "display":
+            elif l == "display":
                 clear_screen(screen)
                 draw_lines(points, screen, color)
                 display(screen)
+                #time.sleep(0.5)
 
-            if l == "save":
-    			l = file.readline().strip()
-    			args = l.split(" ")
-    			if len(args) != 1:
-    				print "Wrong number of arguments for save"
-    			else:
-					draw_lines(points, screen, color)
-					display(screen)
-					save_extension(screen,args[0])
+            elif l == "save":
+                l = file.readline().strip()
+                args = l.split(" ")
+                if len(args) != 1:
+                    print "Wrong number of arguments for save"
+                else:
+                    #clear_screen(screen)
+                    #draw_lines(points, screen, color)
+                    #display(screen)
+                    save_extension(screen,args[0])
 
             else:
-                print "fuck you"
+                print "Command not found"
 
             l = file.readline().strip() 
                      		
