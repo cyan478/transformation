@@ -1,50 +1,90 @@
 line
-0 0 0 100 0 0
+0 0 0 20 0 0
 line
-100 0 0 100 100 0
+20 0 0 20 20 0
 line
-100 100 0 0 100 0
+20 20 0 0 20 0
 line
-0 100 0 0 0 0
+0 20 0 0 0 0
 line
-0 0 100 100 0 100
+0 0 20 20 0 20
 line
-100 0 100 100 100 100
+20 0 20 20 20 20
 line
-100 100 100 0 100 100
+20 20 20 0 20 20
 line
-0 100 100 0 0 100
+0 20 20 0 0 20
 line
-0 0 0 0 0 100
+0 0 0 0 0 20
 line
-0 100 0 0 100 100
+0 20 0 0 20 20
 line
-100 100 0 100 100 100
+20 20 0 20 20 20
 line
-100 0 0 100 0 100
-display
+20 0 0 20 0 20
 ident
+apply
 scale
-2 2 2
-apply
-display
-ident
+1.1 1.1 1.1
 move
-100 100 0
+20 20 0
+rotate
+z 10
+rotate
+x 10
+rotate
+y 10
+rotate
+y 10
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
 apply
 display
+clear
+line
+200 0 0 250 0 86.6
+line
+200 0 0 300 0 0
+line
+300 0 0 250 0 86.6
+line
+200 0 0 250 86.6 28.9
+line
+300 0 0 250 86.6 28.9
+line
+250 0 86.6 250 86.6 28.9
 ident
-rotate
-z 20
-rotate
-x 20
-rotate
-y 20
 apply
-display
-ident
+scale
+0.9 0.9 0.9
+move
+150 -50 0
 rotate
-y 20
+z 10
+rotate
+x 10
+rotate
+y 10
+rotate
+y 10
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
+apply
 apply
 display
 save

@@ -14,7 +14,7 @@ def parse_file( fname, points, transform, screen, color ):
     			if len(args) != 6:
     				print "Wrong number of arguments for line"
     			else:
-    				add_edge(points, int(args[0]), int(args[1]), int(args[2]), int(args[3]), int(args[4]), int(args[5]))
+    				add_edge(points, float(args[0]), float(args[1]), float(args[2]), float(args[3]), float(args[4]), float(args[5]))
 
             elif l == "ident":
     			ident(transform)
@@ -25,7 +25,7 @@ def parse_file( fname, points, transform, screen, color ):
     			if len(args) != 3:
     				print "Wrong number of arguments for scale"
     			else:
-					smatrix = make_scale(int(args[0]),int(args[1]),int(args[2]))
+					smatrix = make_scale(float(args[0]),float(args[1]),float(args[2]))
 					matrix_mult(smatrix, transform)
 
             elif l == "move":
@@ -34,7 +34,7 @@ def parse_file( fname, points, transform, screen, color ):
     			if len(args) != 3:
     				print "Wrong number of arguments for move"
     			else:
-					tmatrix = make_translate(int(args[0]),int(args[1]),int(args[2]))
+					tmatrix = make_translate(float(args[0]),float(args[1]),float(args[2]))
 					matrix_mult(tmatrix, transform)
 
             elif l == "rotate":
@@ -44,13 +44,13 @@ def parse_file( fname, points, transform, screen, color ):
     				print "Wrong number of arguments for rotate"
     			else:
 					if args[0] == "x":
-						rmatrix = make_rotX(int(args[1]))
+						rmatrix = make_rotX(float(args[1]))
 						matrix_mult(rmatrix, transform)
 					elif args[0] == "y":
-						rmatrix = make_rotY(int(args[1]))
+						rmatrix = make_rotY(float(args[1]))
 						matrix_mult(rmatrix, transform)
 					elif args[0] == "z":
-						rmatrix = make_rotZ(int(args[1]))		
+						rmatrix = make_rotZ(float(args[1]))		
 						matrix_mult(rmatrix, transform)
 					else:
 						print "Wrong Axis input, not x/y/z"
