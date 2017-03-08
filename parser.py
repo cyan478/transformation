@@ -70,13 +70,13 @@ def parse_file( fname, points, transform, screen, color ):
                 if len(args) != 1:
                     print "Wrong number of arguments for save"
                 else:
-                    #clear_screen(screen)
-                    #draw_lines(points, screen, color)
+                    clear_screen(screen)
+                    draw_lines(points, screen, color)
                     #display(screen)
                     save_extension(screen,args[0])
 
             else:
-                print "Command not found"
+                print "Command not found:" + l
 
             l = file.readline().strip() 
                      		
