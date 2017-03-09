@@ -4,7 +4,7 @@ from parser import *
 from matrix import *
 
 screen = new_screen()
-color = [ 0, 255, 0 ]
+color = [ 0, 0, 255 ]
 edges = []
 transform = new_matrix()
 

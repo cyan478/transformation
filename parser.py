@@ -9,6 +9,7 @@ def parse_file( fname, points, transform, screen, color ):
     	while (l != "quit" and l != ""):
 
             if l == "line":
+    			print "line"
     			l = file.readline().strip()
     			args = l.split(" ")
     			if len(args) != 6:
@@ -73,6 +74,7 @@ def parse_file( fname, points, transform, screen, color ):
                     clear_screen(screen)
                     draw_lines(points, screen, color)
                     #display(screen)
+                    #save_ppm(screen,l)
                     save_extension(screen,args[0])
 
             else:

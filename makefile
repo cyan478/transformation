@@ -4,4 +4,4 @@ run: main.py display.py draw.py matrix.py parser.py
 clean:
 	rm *.pyc
 	rm *.png
-	rm *~
+	rm *.ppm
